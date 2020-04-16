@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class AsteroidRotation : MonoBehaviour
 {
-    public float speed = 5.0f;
-    public Transform asteroid;
+        public float speed;
+        public Transform asteroid;
 
-    // Update is called once per frame
-    void Update()
-    {
-        asteroid.Rotate(Vector3.forward * speed * Time.deltaTime);
-    }
+        // Update is called once per frame
+        void Update()
+        {
+            asteroid.Rotate(Vector3.forward * speed * Time.deltaTime);
+        }
 }

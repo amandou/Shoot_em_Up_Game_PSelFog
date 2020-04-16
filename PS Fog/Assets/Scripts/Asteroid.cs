@@ -13,13 +13,13 @@ public class Asteroid : MonoBehaviour
         asteroid.velocity = Vector3.down * speed * Time.deltaTime;
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnCollisionEnter2D(Collision2D other)
     {
-        
+        if(other.gameObject.tag == "Player")
+        {
+            Destroy(other.gameObject);
+            Destroy(this.gameObject);
+        }
     }
-    public void TakeDamage()
-    {
-        
-    }
+
 }

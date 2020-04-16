@@ -40,7 +40,6 @@ public class Player : MonoBehaviour
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
         playerRB.velocity = new Vector3(moveHorizontal*speed,moveVertical*speed,0.0f);
-
         boundary.borda(playerRB);
         
         
