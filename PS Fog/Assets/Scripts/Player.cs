@@ -17,14 +17,17 @@ public class Boundary
 public class Player : MonoBehaviour
 {
     Rigidbody2D playerRB;
+    Transform playerTransf;
     public float speed;
-    //public float hp;
+    public int hp;
     public Boundary boundary;
     public GameObject laser;
     public Transform laserSpawn;
+
     void Start()
     {
         playerRB = gameObject.GetComponent<Rigidbody2D>();
+        playerTransf = gameObject.GetComponent<Transform>();
 
         speed = 6;
     }
@@ -33,15 +36,12 @@ public class Player : MonoBehaviour
        PlayerController(); 
     }
 
-
-
     public void PlayerController()
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
         playerRB.velocity = new Vector3(moveHorizontal*speed,moveVertical*speed,0.0f);
         boundary.borda(playerRB);
-        
         
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -50,9 +50,10 @@ public class Player : MonoBehaviour
             laserSpawn.rotation);
         }
         
-        if (Input.GetKeyDown(KeyCode.B))
+        if (Input.GetKeyDown(KeyCode.B) && Input.GetKeyDown(KeyCode.N))
         {
-            Debug.Log("b key was pressed.");
+            playerTransf.rotation = Quaternion.Euler(Vector3.forward * 180);
+            
         }
     }
 

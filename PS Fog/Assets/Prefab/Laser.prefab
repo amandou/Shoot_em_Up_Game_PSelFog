@@ -143,5 +143,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   speed: 10
-  asteroid: {fileID: 4560359727637994033, guid: 53327c6c68190784394cd206e4d7eca7,
+  asteroid: {fileID: 3780979973242617444, guid: 95f780ab19787ab448e61b5e34135e36,
     type: 3}

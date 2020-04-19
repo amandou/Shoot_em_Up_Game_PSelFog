@@ -7,6 +7,8 @@ public class Asteroid : MonoBehaviour
     Rigidbody2D asteroid;
     public float speed;
     public float hp;
+    public int scoreValue;
+    
     void Start()
     {
         asteroid = gameObject.GetComponent<Rigidbody2D>();
@@ -17,8 +19,10 @@ public class Asteroid : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
+            FindObjectOfType<GameController>().GameOver();
             Destroy(other.gameObject);
-            Destroy(this.gameObject);
+            Destroy(this.gameObject); 
+            
         }
     }
 
