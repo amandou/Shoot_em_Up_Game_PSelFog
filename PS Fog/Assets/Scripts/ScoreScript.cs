@@ -16,7 +16,7 @@ public class ScoreScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreText.text = "Score \n" + score;
+        scoreText.text = ""+score;
     }
 
 }

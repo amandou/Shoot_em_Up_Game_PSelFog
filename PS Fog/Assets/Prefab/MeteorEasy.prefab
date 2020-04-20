@@ -142,11 +142,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0bdd85d155946a4c80c298775221d4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameController: {fileID: 5443814060774030534, guid: e4662b7e679ada8449131e4fb149bb42,
-    type: 3}
   speed: 40
   hp: 10
-  scoreValue: 10
+  scoreValue: 1
 --- !u!114 &3780979973242617448
 MonoBehaviour:
   m_ObjectHideFlags: 0

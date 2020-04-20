@@ -8,12 +8,10 @@ public class Laser : MonoBehaviour
     public float damage;
     public float speed;
     public Asteroid asteroid;
-    private int scoreValue;
     void Start()
     {
         laser = gameObject.GetComponent<Rigidbody2D>();
         laser.velocity = new Vector3(0.0f, speed, 0.0f);
-
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
