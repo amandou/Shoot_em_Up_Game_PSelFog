@@ -17,19 +17,18 @@ public class Boundary
 public class Player : MonoBehaviour
 {
     Rigidbody2D playerRB;
-    Transform playerTransf;
     public float speed;
-    public int hp;
     public Boundary boundary;
     public GameObject laser;
     public Transform laserSpawn;
 
+    public enum Itens
+    {
+        points, battery
+    }
     void Start()
     {
         playerRB = gameObject.GetComponent<Rigidbody2D>();
-        playerTransf = gameObject.GetComponent<Transform>();
-
-        speed = 6;
     }
     void FixedUpdate() 
     {
@@ -48,12 +47,6 @@ public class Player : MonoBehaviour
             Instantiate(laser, 
             (laserSpawn.position + new Vector3(0.0f, 1.0f, 0.0f)), 
             laserSpawn.rotation);
-        }
-        
-        if (Input.GetKeyDown(KeyCode.B) && Input.GetKeyDown(KeyCode.N))
-        {
-            playerTransf.rotation = Quaternion.Euler(Vector3.forward * 180);
-            
         }
     }
 

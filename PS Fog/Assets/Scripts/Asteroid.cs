@@ -5,25 +5,13 @@ using UnityEngine;
 public class Asteroid : MonoBehaviour
 {
     Rigidbody2D asteroid;
-    public float speed;
     public float hp;
-    public int scoreValue;
-    
+    public float speed;
+
     void Start()
     {
         asteroid = gameObject.GetComponent<Rigidbody2D>();
-        asteroid.velocity = Vector3.down * speed * Time.deltaTime;
-    }
-
-    void OnCollisionEnter2D(Collision2D other)
-    {
-        if(other.gameObject.tag == "Player")
-        {
-            FindObjectOfType<GameController>().GameOver();
-            Destroy(other.gameObject);
-            Destroy(this.gameObject); 
-            
-        }
+        asteroid.velocity = new Vector3(0.0f, speed, 0.0f) * Time.deltaTime;
     }
 
 }

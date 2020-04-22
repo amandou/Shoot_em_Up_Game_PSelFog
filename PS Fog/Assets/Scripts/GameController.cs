@@ -7,58 +7,24 @@ using TMPro;
 
 public class GameController : MonoBehaviour
 {
-    public float retryDelay;
-    public int numberEnemies;
-    public float startWait;
-    public float spawnWait;
-    public float waveWait;
-
-    public GameObject enemy;
-    public Vector3 spawnPos;
+    public EnemyWave waveGenerator;
 
     public GameUI gameOverUI;
 
-
-    private bool gameOver;
-    private bool retry;
+    public static bool gameOver;
+    public static bool retry;
 
     void Start()
     {
         gameOver = false; 
         retry = false;
         ScoreScript.score = 0;
-        StartCoroutine(SpawnWaves ());
+        waveGenerator.Start();
     }
 
     void Update()
     {
         Retry();
-    }
-
-
-    IEnumerator SpawnWaves()
-    {
-        yield return new WaitForSeconds(startWait);
-
-        while(true)
-        {
-           
-            for(int i = 0; i < numberEnemies; i++)
-            {
-                if(gameOver)
-                {
-                    retry = true;
-                    break;
-                }
-                Vector3 spawnPosition = new Vector3 (Random.Range(-spawnPos.x,spawnPos.x),
-                                                            spawnPos.y,
-                                                            spawnPos.z);
-                Quaternion spawnRotation = Quaternion.identity;
-                Instantiate (enemy, spawnPosition, spawnRotation);
-                yield return new WaitForSeconds(spawnWait); //tempo de espera entre espera de inimigos
-            }
-            yield return new WaitForSeconds(waveWait); //tempo de espera entre as waves
-        }
     }
 
     public void GameOver()
@@ -73,7 +39,10 @@ public class GameController : MonoBehaviour
         if(retry)
         {
             if(Input.GetKeyDown(KeyCode.R) || Input.GetMouseButtonDown(0))
+            {
+                HpSystem.hp=3;
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
         }
     }
 }

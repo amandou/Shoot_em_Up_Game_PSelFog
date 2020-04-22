@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class VoidZone : MonoBehaviour
 {
-    
     private void OnTriggerEnter2D(Collider2D collider)
     {
         
@@ -13,11 +12,4 @@ public class VoidZone : MonoBehaviour
         if(collider.tag == "Enemy")
             collider.gameObject.SetActive(false);
     }
-    
-    /*
-    private void OnTriggerExit2D(Collider2D collider)
-    {
-        Destroy(collider.gameObject);
-    }*/
-
 }
