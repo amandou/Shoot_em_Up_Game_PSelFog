@@ -147,6 +147,8 @@ MonoBehaviour:
   enemy: {fileID: 3131170295770712087, guid: bc86f394ae9162e4181fb854ad8d91e9, type: 3}
   damage: 10
   speed: 10
+  items:
+  - {fileID: 6846072538243232356, guid: 425e5ee08d27fd8419cd21447cdf4287, type: 3}
 --- !u!82 &82024344527672234
 AudioSource:
   m_ObjectHideFlags: 0

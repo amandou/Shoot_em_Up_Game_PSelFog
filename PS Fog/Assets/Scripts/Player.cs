@@ -22,10 +22,8 @@ public class Player : MonoBehaviour
     public GameObject laser;
     public Transform laserSpawn;
 
-    public enum Itens
-    {
-        points, battery
-    }
+   
+
     void Start()
     {
         playerRB = gameObject.GetComponent<Rigidbody2D>();
@@ -49,5 +47,4 @@ public class Player : MonoBehaviour
             laserSpawn.rotation);
         }
     }
-
 }

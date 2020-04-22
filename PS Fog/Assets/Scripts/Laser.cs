@@ -8,6 +8,8 @@ public class Laser : MonoBehaviour
     public Enemy enemy;
     public float damage;
     public float speed;
+    public GameObject[] items;
+    public static int positionItem;
 
     Rigidbody2D laser;
     
@@ -23,12 +25,26 @@ public class Laser : MonoBehaviour
         if (collider.gameObject.CompareTag("Asteroid") )
         {
             ScoreScript.score += asteroid.hp;
+            if( Random.Range(0,100) / 2 == 0 )
+            {
+                Asteroid asteroid = collider.GetComponent<Asteroid>();
+                positionItem = Random.Range(0,items.Length);
+                Instantiate(items[positionItem], 
+                asteroid.transform.position, Quaternion.identity);
+            }
             Destroy(collider.gameObject);
             Destroy(this.gameObject); 
         }
         if (collider.gameObject.CompareTag("Enemy"))
         {
             ScoreScript.score += enemy.hp;
+            if( Random.Range(0,100) / 2 == 0 )
+            {
+                Enemy enemy = collider.GetComponent<Enemy>();
+                positionItem = Random.Range(0,items.Length);
+                Instantiate(items[positionItem], 
+                enemy.transform.position, Quaternion.identity);
+            }
             Destroy(collider.gameObject);
             Destroy(this.gameObject); 
         }
