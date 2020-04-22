@@ -11,16 +11,14 @@
 - [x] Spawn de Inimigos na direção oposta ao player
 - [x] Tratamento de colisão do jogador com inimigo e inimigo com tiro
 - [x] Mostrar pontuação a casa inimigo que é derrotado
-- [ ] Game Over
-- [ ] Restart
-- [ ] Start
-- [ ] Som
+- [x] Game Over/Restart
+- [x] Start
+- [x] Som de fundo
 
 #### Metas Adicionais
-- [ ] Inimigo com comportamento diferente
-- [ ] Movimentação automática do fundo
+- [x] Inimigo com comportamento diferente
+- [x] Movimentação automática do fundo
 - [ ] Inimigo deixa cair power up
 - [ ] Ataque especial temporário
 - [ ] Mecânica de combustível
 - [ ] Mecânica de barrel roll
-- [ ] Inimigos com diferentes HP
